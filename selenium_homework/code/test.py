@@ -9,7 +9,7 @@ class TestOne(BaseCase):
     def test_title(self):
         assert "myTarget" in self.driver.title
 
-
+    @pytest.mark.UI
     def test_login(self):
         login_button = self.find(basic_locators.LOGIN_LOCATOR)
         login_button.click()
@@ -29,7 +29,7 @@ class TestOne(BaseCase):
         logout_button.click()
         assert "myTarget" in self.driver.title
 
-
+    @pytest.mark.UI
     def test_logout(self):
         go_button = self.find(basic_locators.LOGIN_LOCATOR)
         go_button.click()
@@ -49,7 +49,7 @@ class TestOne(BaseCase):
         logout_button.click()
         assert "myTarget" in self.driver.title
 
-
+    @pytest.mark.UI
     def test_change_info(self):
         go_button = self.find(basic_locators.LOGIN_LOCATOR)
         go_button.click()
