@@ -1,7 +1,6 @@
 from base import BaseCase
 from ui.locators import basic_locators
 import pytest
-import time
 
 class TestOne(BaseCase):
 
@@ -11,73 +10,44 @@ class TestOne(BaseCase):
 
     @pytest.mark.UI
     def test_login(self):
-        login_button = self.find(basic_locators.LOGIN_LOCATOR)
-        login_button.click()
-        email_button = self.find(basic_locators.EMAIL_LOCATOR)
-        email_button.click()
-        email_button.send_keys('autotestqa@list.ru')
-        password_button = self.find(basic_locators.PASSWORD_LOCATOR)
-        password_button.click()
-        password_button.send_keys('ThisIsNotAPassword')
-        enter_button = self.find(basic_locators.ENTER_LOCATOR)
-        enter_button.click()
-        assert "AUTOTESTQA@LIST.RU" not in self.driver.page_source
-        user_button = self.find(basic_locators.USER_LOCATOR)
-        user_button.click()
-        time.sleep(2)
-        logout_button = self.find(basic_locators.LOGOUT_LOCATOR)
-        logout_button.click()
-        assert "myTarget" in self.driver.title
+        self.find(basic_locators.LOGIN_LOCATOR).click()
+        self.find(basic_locators.EMAIL_LOCATOR).click()
+        self.find(basic_locators.EMAIL_LOCATOR).send_keys('autotestqa@list.ru')
+        self.find(basic_locators.PASSWORD_LOCATOR).click()
+        self.find(basic_locators.PASSWORD_LOCATOR).send_keys('ThisIsNotAPassword')
+        self.find(basic_locators.ENTER_LOCATOR).click()
+        assert "ПРОФИЛЬ" not in self.driver.page_source
 
     @pytest.mark.UI
     def test_logout(self):
-        go_button = self.find(basic_locators.LOGIN_LOCATOR)
-        go_button.click()
-        login_button = self.find(basic_locators.EMAIL_LOCATOR)
-        login_button.click()
-        login_button.send_keys('autotestqa@list.ru')
-        password_button = self.find(basic_locators.PASSWORD_LOCATOR)
-        password_button.click()
-        password_button.send_keys('ThisIsNotAPassword')
-        enter_button = self.find(basic_locators.ENTER_LOCATOR)
-        enter_button.click()
-        assert "AUTOTESTQA@LIST.RU" not in self.driver.page_source
-        user_button = self.find(basic_locators.USER_LOCATOR)
-        user_button.click()
-        time.sleep(2)
-        logout_button = self.find(basic_locators.LOGOUT_LOCATOR)
-        logout_button.click()
+        self.find(basic_locators.LOGIN_LOCATOR).click()
+        self.find(basic_locators.EMAIL_LOCATOR).click()
+        self.find(basic_locators.EMAIL_LOCATOR).send_keys('autotestqa@list.ru')
+        self.find(basic_locators.PASSWORD_LOCATOR).click()
+        self.find(basic_locators.PASSWORD_LOCATOR).send_keys('ThisIsNotAPassword')
+        self.find(basic_locators.ENTER_LOCATOR).click()
+        assert "ПРОФИЛЬ" not in self.driver.page_source
+        self.find(basic_locators.USER_LOCATOR).click()
+        self.find(basic_locators.LOGOUT_LOCATOR).click()
         assert "myTarget" in self.driver.title
 
     @pytest.mark.UI
     def test_change_info(self):
-        go_button = self.find(basic_locators.LOGIN_LOCATOR)
-        go_button.click()
-        login_button = self.find(basic_locators.EMAIL_LOCATOR)
-        login_button.click()
-        login_button.send_keys('autotestqa@list.ru')
-        password_button = self.find(basic_locators.PASSWORD_LOCATOR)
-        password_button.click()
-        password_button.send_keys('ThisIsNotAPassword')
-        enter_button = self.find(basic_locators.ENTER_LOCATOR)
-        enter_button.click()
-        assert "AUTOTESTQA@LIST.RU" not in self.driver.page_source
-        profile_button = self.find(basic_locators.PROFILE_LOCATOR)
-        profile_button.click()
-        fullname_button = self.find(basic_locators.FULLNAME_LOCATOR)
-        fullname_button.click()
-        fullname_button.send_keys('Иванов Иван')
-        phone_button = self.find(basic_locators.PHONE_LOCATOR)
-        phone_button.click()
-        phone_button.send_keys('88005553535')
-        save_button = self.find(basic_locators.SAVE_LOCATOR)
-        save_button.click()
-        time.sleep(2)
-        user_button = self.find(basic_locators.USER_LOCATOR)
-        user_button.click()
-        time.sleep(2)
-        logout_button = self.find(basic_locators.LOGOUT_LOCATOR)
-        logout_button.click()
+        self.find(basic_locators.LOGIN_LOCATOR).click()
+        self.find(basic_locators.EMAIL_LOCATOR).click()
+        self.find(basic_locators.EMAIL_LOCATOR).send_keys('autotestqa@list.ru')
+        self.find(basic_locators.PASSWORD_LOCATOR).click()
+        self.find(basic_locators.PASSWORD_LOCATOR).send_keys('ThisIsNotAPassword')
+        self.find(basic_locators.ENTER_LOCATOR).click()
+        assert "ПРОФИЛЬ" not in self.driver.page_source
+        self.find(basic_locators.PROFILE_LOCATOR).click()
+        self.find(basic_locators.FULLNAME_LOCATOR).click()
+        self.find(basic_locators.FULLNAME_LOCATOR).send_keys('Иванов Иван')
+        self.find(basic_locators.PHONE_LOCATOR).click()
+        self.find(basic_locators.PHONE_LOCATOR).send_keys('88005553535')
+        self.find(basic_locators.SAVE_LOCATOR).click()
+        self.find(basic_locators.USER_LOCATOR).click()
+        self.find(basic_locators.LOGOUT_LOCATOR).click()
         assert "myTarget" in self.driver.title
 
 

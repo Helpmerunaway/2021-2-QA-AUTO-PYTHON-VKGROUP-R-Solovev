@@ -34,12 +34,6 @@ def driver(config):
 
     browser.maximize_window()
     browser.get(url)
-    # browser.set_window_size(1400, 1000)
-    # browser.set_network_conditions(
-    #     offline=False,
-    #     latency=5,  # additional latency (ms)
-    #     download_throughput=500 * 64,  # maximal throughput
-    #     upload_throughput=500 * 64
-    # )
+
     yield browser
     browser.close()
